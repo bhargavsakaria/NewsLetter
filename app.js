@@ -11,9 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(5000, function () {
-	console.log("Server is running on port 5000");
-});
+app.listen(process.env.PORT || 5000);
 
 app.get('/', function (req, res) {
 	res.redirect('/signup.html');
